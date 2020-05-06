@@ -2,7 +2,7 @@
     <li>
         <a
             class="font-bold text-lg mb-4 block"
-            href="/"
+            href="{{ route('home') }}"
         >Home</a>
     </li>
     <li>
@@ -22,6 +22,12 @@
             class="font-bold text-lg mb-4 block"
             href="#"
         >Bookmarks</a>
+    </li>
+    <li>
+        <a
+            class="font-bold text-lg mb-4 block"
+            href="{{ route('profile', auth()->user()) }}"
+        >Profile</a>
     </li>
     <li>
         <a

@@ -1,5 +1,8 @@
 <?php
 
+// Debugging only
+// DB::listen(function($query) { var_dump($query->sql, $query->bindings); });
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,5 +24,7 @@ Route::middleware('auth')->group(function() {
     Route::get('/tweets', 'TweetController@index')->name('home');
     Route::post('/tweets', 'TweetController@store');
 });
+
+Route::get('/profiles/{user}', 'ProfileController@show')->name('profile');
 
 Auth::routes();
