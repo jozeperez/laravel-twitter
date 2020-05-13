@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'username'
+        'name', 'email', 'password', 'username', 'avatar'
     ];
 
     /**
@@ -52,8 +52,13 @@ class User extends Authenticatable
         return $this->hasMany(Tweet::class)->latest();
     }
 
-    public function getAvatarAttribute()
+    public function getAvatarAttribute($value)
     {
+        if (!empty($value))
+        {
+            return asset("storage/".$value);
+        }
+
         return "https://i.pravatar.cc/200?u=" . $this->email;
     }
 
