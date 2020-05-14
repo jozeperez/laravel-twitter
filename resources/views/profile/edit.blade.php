@@ -66,7 +66,6 @@
                     name="avatar"
                     id="avatar"
                     value="{{ $user->avatar }}"
-                    required
                 >
 
                 <img
@@ -102,7 +101,7 @@
                 <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
             @enderror
         </div>
-<!--
+
         <div class="mb-6">
             <label
                 class="block mb-2 font-bold text-xs text-gray-700"
@@ -142,7 +141,7 @@
                 <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
             @enderror
         </div>
--->
+
         <div class="mb-6">
             <button
                 type="submit"

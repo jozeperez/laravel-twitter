@@ -62,6 +62,11 @@ class User extends Authenticatable
         return "https://i.pravatar.cc/200?u=" . $this->email;
     }
 
+    public function setPasswordAttribute($value)
+    {
+        $this->attributes['password'] = bcrypt($value);
+    }
+
     public function path($append = '')
     {
         $path = route('profile', $this->username);
