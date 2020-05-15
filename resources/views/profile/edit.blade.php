@@ -149,6 +149,8 @@
             >
                 Submit
             </button>
+
+            <a href="{{ $user->path() }}" class="pl-4 hover:underline">Cancel</a>
         </div>
     </form>
 </x-app>
